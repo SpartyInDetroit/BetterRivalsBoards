@@ -7,14 +7,14 @@
   "license": "MPL 2.0",
   "version": "0.1",
   "preferences": [{
-    "name": "hide-sidebar",
+    "name": "hideSidebar",
     "title": "Hide Sidebar",
     "description": "Hide the rightmost sidebar in all views",
     "type": "bool",
     "value": true
   },
   {
-    "name": "show-sidebar-toggle-button",
+    "name": "showSidebarToggleButton",
     "title": "Toggle Sidebar Button",
     "description": "Show the 'toggle sidebar' button",
     "type": "bool",
@@ -28,7 +28,7 @@
     "value": true
   },
   {
-    "name": "white-background",
+    "name": "whiteBackground",
     "title": "White Background",
     "description": "Display white background instead of off-grey in page margins",
     "type": "bool",
@@ -42,105 +42,105 @@
     "value": true
   },
   {
-    "name": "compact-forum",
+    "name": "compactForum",
     "title": "Compact Forum",
     "description": "Compress thread title, starter, and time to one line. Remove additional padding",
     "type": "bool",
     "value": true
   },
   {
-    "name": "compact-sticky-heading",
+    "name": "compactStickyHeading",
     "title": "Minimize Sticky Separation",
     "description": "Minimize separation between sticky and normal threads",
     "type": "bool",
     "value": false
   },
   {
-    "name": "hide-sticky-heading",
+    "name": "hideStickyHeading",
     "title": "Hide Sticky Separation",
     "description": "Remove separation between sticky and normal threads",
     "type": "bool",
     "value": true
   },
   {
-    "name": "hide-op-avatar",
+    "name": "hideOPAvatar",
     "title": "Hide OP's Avatar",
     "description": "Hide the original poster's avatar",
     "type": "bool",
     "value": false
   },
   {
-    "name": "hide-last-post-avatar",
+    "name": "hideLastPostAvatar",
     "title": "Hide Last Poster's Avatar",
     "description": "Hide the last poster's avatar",
     "type": "bool",
     "value": true
   },
   {
-    "name": "page-buttons-visible",
+    "name": "pageButtonsVisible",
     "title": "Show Page Buttons",
     "description": "Always show page buttons for multi-page threads",
     "type": "bool",
     "value": true
   },
   {
-    "name": "highlight-viewed-threads",
+    "name": "highlightViewedThreads",
     "title": "Highlight New Post Threads",
     "description": "Highlight threads that you've viewed that have new posts",
     "type": "bool",
     "value": true
   },
   {
-    "name": "compact-thread",
+    "name": "compactThread",
     "title": "Compact Posts",
     "description:": "Remove excess whitespace in and around posts",
     "type": "bool",
     "value": true
   },
   {
-    "name": "collapse-user-info",
+    "name": "collapseUserInfo",
     "title": "Collapse User Info",
     "description": "Collapse the user info in thread view. Details can be shown by hovering over the user avatar",
     "type": "bool",
     "value": true
   },
   {
-    "name": "leave-badge-visible",
+    "name": "leaveBadgeVisible",
     "title": "Show Badges",
     "description": "Leave the member/moderator badges visible when collapsing user info",
     "type": "bool",
     "value": false
   },
   {
-    "name": "username-colors",
+    "name": "usernameColors",
     "title": "Dark Usernames",
     "description": "Display dark usernames",
     "type": "bool",
     "value": true
   },
   {
-    "name": "replace-avatars",
+    "name": "replaceAvatars",
     "title": "Square Avatars",
     "description": "Replace round avatars with square versions. Gif avatars will work",
     "type": "bool",
     "value": true
   },
   {
-    "name": "live-updates",
+    "name": "liveUpdates",
     "title": "Live Updates",
     "description": "Update threads as new posts are added",
     "type": "bool",
     "value": true
   },
   {
-    "name": "live-update-polling-interval",
+    "name": "liveUpdatePollingInterval",
     "title": "Live Update Polling Interval",
     "description": "Polling interval for live updates in seconds",
     "type": "integer",
     "value": 60
   },
   {
-    "name": "moderator-mode",
+    "name": "moderatorMode",
     "title": "Moderator Mode",
     "description": "I'm a moderator!",
     "type": "bool",

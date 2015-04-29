@@ -3,12 +3,12 @@ var preferences = require("sdk/simple-prefs").prefs;
 (function(){
   var self, DocumentEnd = function(){
     function(){
-      if(preferences.highlight-viewed-threads){ this.findViewed(); }
-      if(preferences.replace-avatars){ this.regularAvatars(); }
-      if(preferences.show-sidebar-toggle-button){ this.appendSidebarToggleButton(); }
+      if(preferences.highlightViewedThreads){ this.findViewed(); }
+      if(preferences.replaceAvatars){ this.regularAvatars(); }
+      if(preferences.showSidebarToggleButton){ this.appendSidebarToggleButton(); }
 
-      if(preferences.live-updates && /threads(?!.*add-reply)/.test(window.location.pathname)){ // we are in a thread view
-        window.setInterval(this.checkForUpdates.bind(this), preferences.live-update-polling-interval * 1000);
+      if(preferences.liveUpdates && /threads(?!.*add-reply)/.test(window.location.pathname)){ // we are in a thread view
+        window.setInterval(this.checkForUpdates.bind(this), preferences.liveUpdatePollingInterval * 1000);
         this.preventDuplicateMessages();
       }
     }.bind(this));
@@ -33,9 +33,9 @@ var preferences = require("sdk/simple-prefs").prefs;
     },
     toggleSidebar: function(e){
       e.preventDefault();
-      var newVal = !preferences.hide-sidebar;
+      var newVal = !preferences.hideSidebar;
       newVal ? $('html').addClass('enhancement-hide-sidebar') : $('html').removeClass('enhancement-hide-sidebar');
-      preferences.hide-sidebar = newVal;
+      preferences.hideSidebar = newVal;
     },
 
     // live update interval
@@ -87,7 +87,7 @@ var preferences = require("sdk/simple-prefs").prefs;
         }
       });
 
-      if(preferences.replace-avatars && mutations.some(function(mutation){ return mutation.addedNodes.length > 0; })){
+      if(preferences.replaceAvatars && mutations.some(function(mutation){ return mutation.addedNodes.length > 0; })){
         this.regularAvatars();
       }
     }
