@@ -1,0 +1,149 @@
+{
+  "name": "rbe",
+  "title": "Rivals Board Enhancements",
+  "id": "jid1-C6iAmhIIAdKPBA",
+  "description": "This extension adds a number of enhancements to the new rivals message board",
+  "author": "msudude",
+  "license": "MPL 2.0",
+  "version": "0.1",
+  "preferences": [{
+    "name": "hide-sidebar",
+    "title": "Hide Sidebar",
+    "description": "Hide the rightmost sidebar in all views",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "show-sidebar-toggle-button",
+    "title": "Toggle Sidebar Button",
+    "description": "Show the 'toggle sidebar' button",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "micro",
+    "title": "Remove Headers and Footers",
+    "description": "Remove page header and footer and unneeded whitespace",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "white-background",
+    "title": "White Background",
+    "description": "Display white background instead of off-grey in page margins",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "striped",
+    "title": "Striped Rows",
+    "description": "Stripe alternating rows of threads and posts",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "compact-forum",
+    "title": "Compact Forum",
+    "description": "Compress thread title, starter, and time to one line. Remove additional padding",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "compact-sticky-heading",
+    "title": "Minimize Sticky Separation",
+    "description": "Minimize separation between sticky and normal threads",
+    "type": "bool",
+    "value": false
+  },
+  {
+    "name": "hide-sticky-heading",
+    "title": "Hide Sticky Separation",
+    "description": "Remove separation between sticky and normal threads",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "hide-op-avatar",
+    "title": "Hide OP's Avatar",
+    "description": "Hide the original poster's avatar",
+    "type": "bool",
+    "value": false
+  },
+  {
+    "name": "hide-last-post-avatar",
+    "title": "Hide Last Poster's Avatar",
+    "description": "Hide the last poster's avatar",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "page-buttons-visible",
+    "title": "Show Page Buttons",
+    "description": "Always show page buttons for multi-page threads",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "highlight-viewed-threads",
+    "title": "Highlight New Post Threads",
+    "description": "Highlight threads that you've viewed that have new posts",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "compact-thread",
+    "title": "Compact Posts",
+    "description:": "Remove excess whitespace in and around posts",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "collapse-user-info",
+    "title": "Collapse User Info",
+    "description": "Collapse the user info in thread view. Details can be shown by hovering over the user avatar",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "leave-badge-visible",
+    "title": "Show Badges",
+    "description": "Leave the member/moderator badges visible when collapsing user info",
+    "type": "bool",
+    "value": false
+  },
+  {
+    "name": "username-colors",
+    "title": "Dark Usernames",
+    "description": "Display dark usernames",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "replace-avatars",
+    "title": "Square Avatars",
+    "description": "Replace round avatars with square versions. Gif avatars will work",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "live-updates",
+    "title": "Live Updates",
+    "description": "Update threads as new posts are added",
+    "type": "bool",
+    "value": true
+  },
+  {
+    "name": "live-update-polling-interval",
+    "title": "Live Update Polling Interval",
+    "description": "Polling interval for live updates in seconds",
+    "type": "integer",
+    "value": 60
+  },
+  {
+    "name": "moderator-mode",
+    "title": "Moderator Mode",
+    "description": "I'm a moderator!",
+    "type": "bool",
+    "value": false
+  }]
+}
