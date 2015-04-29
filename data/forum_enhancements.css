@@ -1,0 +1,298 @@
+div#userBar:not(.inactiveSticky){
+  display: block;
+  height: 40px;
+}
+
+/* ----- alternating colors ----- */
+
+.enhancement-striped li.discussionListItem:nth-child(even){
+  background: #EAEAEA;
+}
+
+.enhancement-striped li.discussionListItem.sticky:nth-child(even){
+  background: #E0E0E0;
+}
+.enhancement-striped li.discussionListItem.sticky:nth-child(odd){
+  background: #D5D5D5;
+}
+
+.enhancement-striped .messageList li.message:nth-child(even){
+  background: #EAEAEA;
+}
+
+.enhancement-striped .discussionList .discussionListItem .posterAvatar, .enhancement-striped .discussionList .discussionListItem .stats{
+  background-color: transparent;
+}
+
+/* ----- end alternating colors ----- */
+
+/* ----- viewed thread ------- */
+
+.discussionList li.discussionListItem.enhancement-viewed {
+  background-color: #DEFFDE;
+}
+
+.discussionList li.discussionListItem.sticky.enhancement-viewed {
+  background-color: rgb(234, 255, 238);
+}
+
+.discussionList .discussionListItem.enhancement-viewed .posterAvatar, .discussionList .discussionListItem.enhancement-viewed .stats{
+  background-color: transparent;
+}
+
+/* ----- end viewed thread ----- */
+
+/* ----- hide last post avatar ----- */
+
+.enhancement-hide-last-post-avatar .lastPostInfo .avatar{
+  display: none;
+}
+
+/* ----- end hide last post avatar ----- */
+
+/* ----- hide sidebar ----- */
+
+.enhancement-hide-sidebar aside.uix_mainSidebar{
+  display: none;
+}
+
+.enhancement-hide-sidebar .mainContainer .mainContent{
+  margin-right: 0px !important;
+}
+
+/* ----- end hide sidebar ----- */
+
+/* ----- hide sticky heading ----- */
+
+.enhancement-hide-sticky-heading .discussionListItems .heading{
+  display: none;
+}
+
+/* ----- end hide sticky heading ----- */
+
+/* ----- compact sticky heading ----- */
+
+.enhancement-compact-sticky-heading .discussionListItems .heading {
+  height: 8px;
+  overflow: hidden;
+  padding: 0px;
+  text-indent: -9999px;
+  margin-bottom: 0px;
+}
+
+/* ----- end compact sticky heading ----- */
+
+/* ----- compact forum view ----- */
+
+.enhancement-compact-forum .funbox {
+  display: none;
+}
+
+
+.enhancement-compact-forum .discussionListItem .posterAvatar .avatarContainer .avatar img {
+  width: 24px;
+  height: 24px;
+}
+
+.enhancement-compact-forum .discussionListItem .posterAvatar .avatarContainer .miniMe img {
+  width: 16px;
+  height: 16px;
+}
+
+.enhancement-compact-forum .discussionListItem .listBlock .title {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.enhancement-compact-forum .discussionListItem .listBlock .secondRow {
+  display: inline-block;
+}
+
+.enhancement-compact-forum:not(.enhancement-moderator-mode) .discussionListItem .listBlock .secondRow .posterDate {
+  float: none;
+}
+
+.enhancement-compact-forum .discussionListItems .discussionListItem{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.enhancement-compact-forum .discussionListItem .stats dl.major {
+  margin-top: 0px;
+  font-size: 11px;
+  line-height: 1.2em;
+}
+
+.enhancement-compact-forum .discussionListItem .stats dl.minor {
+  margin-bottom: 0px;
+  font-size: 11px;
+  line-height: 1.2em;
+}
+
+.enhancement-compact-forum .discussionListItem .lastPost .lastPostInfo {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.enhancement-compact-forum ol.discussionListItems .lastPostInfo a.username {
+  font-size: 11px;
+  line-height: 1.2em;
+}
+
+.enhancement-compact-forum li.discussionListItem .lastPostInfo .dateTime {
+  font-size: 11px;
+  line-height: 1.2em;
+}
+
+/* ------- end compact forum view -------- */
+
+/* ----- replace avatar ----- */
+
+.enhancement-replace-avatars .messageUserBlock div.avatarHolder a.avatar img, .enhancement-replace-avatars div.secondaryContent a.avatar img {
+  max-height: 96px;
+  max-width: 96px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* ----- end replace avatar ----- */
+
+/* ------- collapse user info -------- */
+
+.enhancement-collapse-user-info .messageUserInfo .messageUserBlock .userTitle, .enhancement-collapse-user-info .messageUserInfo .messageUserBlock .userBanner, .enhancement-collapse-user-info .messageUserInfo .messageUserBlock .extraUserInfo {
+  display: none;
+}
+
+.enhancement-collapse-user-info .messageUserInfo .messageUserBlock:hover .userTitle, .enhancement-collapse-user-info .messageUserInfo .messageUserBlock:hover .userBanner, .enhancement-collapse-user-info .messageUserInfo .messageUserBlock:hover .extraUserInfo {
+  display: block;
+}
+
+.enhancement-collapse-user-info .message .messageInfo .messageContent {
+  min-height: 0px;
+}
+
+/* ------- end collapse user info ------- */
+
+/* ------- leave badge visible -------- */
+
+.enhancement-leave-badge-visible .messageUserInfo .messageUserBlock .userTitle, .enhancement-leave-badge-visible .messageUserInfo .messageUserBlock .userBanner {
+  display: block;
+}
+
+/* ------- end leave bage visible ------- */
+
+/* ----- compact thread view ----- */
+
+.enhancement-compact-thread .messageList li.message{
+  margin: 0px auto;
+  border-radius: 0px;
+  border-top-width: 0;
+  padding: 4px;
+}
+
+.enhancement-compact-thread .messageList li.message:first-child{
+  border-radius: 4px 4px 0px 0px;
+  border-top-width: 1px;
+}
+
+.enhancement-compact-thread .messageList li.message:last-child{
+  border-radius: 0px 0px 4px 4px;
+}
+
+.enhancement-compact-thread #content div.pageContent{
+  border: 0;
+  padding: 0;
+}
+
+.enhancement-compact-thread li.message .messageContent{
+  padding: 4px 0px;
+}
+
+.enhancement-compact-thread li.message .messageDetails{
+  padding: 2px 0px;
+  font-size: 10px;
+}
+
+.enhancement-compact-thread li.message .messageMeta{
+  padding: 2px 0px 0px;
+  font-size: 10px;
+}
+
+.enhancement-compact-thread li.message .messageMeta .control{
+  line-height: 1.6em;
+  padding: 0px 5px;
+}
+
+.enhancement-compact-thread li.message .likesSummary{
+  margin: 0px;
+  padding: 4px;
+}
+
+.enhancement-compact-thread .sharePage, .afterDiscussionListHandle {
+  border: 1px solid rgb(226, 226, 226);
+  border-bottom-width: 0px;
+  border-radius: 4px 4px 0px 0px;
+  padding: 0px 8px;
+}
+
+.enhancement-compact-thread .sharePage .textHeading {
+  border: 0;
+}
+
+/* ----- end compact thread view ----- */
+
+/* ----- white background ----- */
+
+html#XenForo.enhancement-white-background, html.enhancement-white-background body{
+  background: #FFF;
+}
+
+/* ----- end white background ----- */
+
+/* ----- more appropriate username weights ----- */
+
+.enhancement-username-colors li.message .userText .username, li.discussionListItem .titleText .username{
+  color: #333;
+  font-weight: bold;
+}
+
+.enhancement-username-colors ol.discussionListItems .lastPostInfo a.username {
+  font-weight: normal;
+  color: #0A4EA3;
+}
+/* ----- end more appropriate username weights ----- */
+
+/* ----- micro view ----- */
+
+.enhancement-micro #logoBlock{
+  display: none;
+}
+
+.enhancement-micro .footerLegal #copyright{
+  display: none;
+}
+
+.enhancement-micro div.footerLegal .pageContent{
+  height: 15px;
+  padding: 0px;
+  margin: 0px;
+}
+/* ----- end micro view ----- */
+
+/* ----- show paging buttons always ----- */
+
+.enhancement-page-buttons-visible li.discussionListItem .itemPageNav {
+  visibility: visible;
+}
+
+/* ----- end show paging buttons always ----- */
+
+/* ----- hide op avatar ----- */
+
+.enhancement-hide-op-avatar .listBlock.posterAvatar{
+  display: none;
+}
+
+/* ----- end hide op avatar ----- */
