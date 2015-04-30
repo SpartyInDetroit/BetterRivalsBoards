@@ -1,5 +1,8 @@
 var preferences = require("sdk/simple-prefs").prefs;
 
+self.port.on("get", function() {
+  self.port.emit("got");
+});
 
 (function(){
   var self, DocumentStart = function(){
@@ -25,10 +28,9 @@ var preferences = require("sdk/simple-prefs").prefs;
         if(preferences.pageButtonsVisible){ root.addClass('enhancement-page-buttons-visible'); }
         if(preferences.hideOPAvatar){ root.addClass('enhancement-hide-op-avatar'); }
         if(preferences.replaceAvatars){ root.addClass('enhancement-replace-avatars'); }
+      });
     }
   }
-
-  console.log("hello world!");
 
   self = new DocumentStart();
 })();
