@@ -1,5 +1,6 @@
 (function(){
-  var that, DocumentEnd = function(){
+  var selff, DocumentEnd = function(){
+    var that = this;
     self.port.on("getPrefs", function(prefs){
       var highlightViewedThreads = prefs[0];
       var replaceAvatars = prefs[1];
@@ -8,13 +9,13 @@
       var liveUpdatePollingInterval = prefs[4];
       var hideSidebar = prefs[5];
 
-      if(highlightViewedThreads){ this.findViewed(); }
-      if(replaceAvatars){ this.regularAvatars(); }
-      if(showSidebarToggleButton){ this.appendSidebarToggleButton(); }
+      if(highlightViewedThreads){ that.findViewed(); }
+      if(replaceAvatars){ that.regularAvatars(); }
+      if(showSidebarToggleButton){ that.appendSidebarToggleButton(); }
 
       if(liveUpdates && /threads(?!.*add-reply)/.test(window.location.pathname)){ // we are in a thread view
-        window.setInterval(this.checkForUpdates.bind(this), liveUpdatePollingInterval * 1000);
-        this.preventDuplicateMessages();
+        window.setInterval(that.checkForUpdates.bind(that), liveUpdatePollingInterval * 1000);
+        that.preventDuplicateMessages();
       }
     });
 
@@ -71,7 +72,7 @@
       }
       var el = $(this),
           url = window.location.origin + '/' + el.data('posturl');
-      $.post(url, {_xfNoRedirect: 1, _xfRequestUri: window.location.pathname, _xfToken: that.token, _xfResponseType: 'json'}).then(function(data){
+      $.post(url, {_xfNoRedirect: 1, _xfRequestUri: window.location.pathname, _xfToken: selff.token, _xfResponseType: 'json'}).then(function(data){
         $('.bbCodeEditorContainer textarea').val(data.quote);
         $('.bbCodeEditorContainer textarea').focus();
       });
@@ -102,5 +103,5 @@
     }
   }
 
-  that = new DocumentEnd();
+  selff = new DocumentEnd();
 })();
