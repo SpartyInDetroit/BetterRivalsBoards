@@ -1,9 +1,9 @@
 (function(){
-  var self, DocumentStart = function(){
+  var that, DocumentStart = function(){
     this.loadOptions();
   }
 
-  self.port.on("get-prefs", )
+
 
   DocumentStart.prototype = {
     loadOptions: function(){
@@ -47,5 +47,5 @@
     }
   }
 
-  self = new DocumentStart();
+  that = new DocumentStart();
 })();

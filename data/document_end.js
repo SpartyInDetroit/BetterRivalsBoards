@@ -1,17 +1,22 @@
-var preferences = require("sdk/simple-prefs").prefs;
-
 (function(){
-  var self, DocumentEnd = function(){
-    function(){
-      if(preferences.highlightViewedThreads){ this.findViewed(); }
-      if(preferences.replaceAvatars){ this.regularAvatars(); }
-      if(preferences.showSidebarToggleButton){ this.appendSidebarToggleButton(); }
+  var that, DocumentEnd = function(){
+    self.port.on("getPrefs", function(prefs){
+      var highlightViewedThreads = prefs[0];
+      var replaceAvatars = prefs[1];
+      var showSidebarToggleButton = prefs[2];
+      var liveUpdates = prefs[3];
+      var liveUpdatePollingInterval = prefs[4];
+      var hideSidebar = prefs[5];
 
-      if(preferences.liveUpdates && /threads(?!.*add-reply)/.test(window.location.pathname)){ // we are in a thread view
-        window.setInterval(this.checkForUpdates.bind(this), preferences.liveUpdatePollingInterval * 1000);
+      if(highlightViewedThreads){ this.findViewed(); }
+      if(replaceAvatars){ this.regularAvatars(); }
+      if(showSidebarToggleButton){ this.appendSidebarToggleButton(); }
+
+      if(liveUpdates && /threads(?!.*add-reply)/.test(window.location.pathname)){ // we are in a thread view
+        window.setInterval(this.checkForUpdates.bind(this), liveUpdatePollingInterval * 1000);
         this.preventDuplicateMessages();
       }
-    }.bind(this));
+    });
 
     this.token = $('[name=_xfToken]').val();
     this.lastCheck = Math.floor(Date.now().valueOf() / 1000);
@@ -33,9 +38,13 @@ var preferences = require("sdk/simple-prefs").prefs;
     },
     toggleSidebar: function(e){
       e.preventDefault();
-      var newVal = !preferences.hideSidebar;
-      newVal ? $('html').addClass('enhancement-hide-sidebar') : $('html').removeClass('enhancement-hide-sidebar');
-      preferences.hideSidebar = newVal;
+      self.port.on("getPrefs", function(prefs) {
+        var hideSidebar = prefs[5];
+
+        var newVal = !hideSidebar;
+        newVal ? $('html').addClass('enhancement-hide-sidebar') : $('html').removeClass('enhancement-hide-sidebar');
+        self.port.emit("gotPrefs", newVal);
+      });
     },
 
     // live update interval
@@ -62,7 +71,7 @@ var preferences = require("sdk/simple-prefs").prefs;
       }
       var el = $(this),
           url = window.location.origin + '/' + el.data('posturl');
-      $.post(url, {_xfNoRedirect: 1, _xfRequestUri: window.location.pathname, _xfToken: self.token, _xfResponseType: 'json'}).then(function(data){
+      $.post(url, {_xfNoRedirect: 1, _xfRequestUri: window.location.pathname, _xfToken: that.token, _xfResponseType: 'json'}).then(function(data){
         $('.bbCodeEditorContainer textarea').val(data.quote);
         $('.bbCodeEditorContainer textarea').focus();
       });
@@ -87,11 +96,11 @@ var preferences = require("sdk/simple-prefs").prefs;
         }
       });
 
-      if(preferences.replaceAvatars && mutations.some(function(mutation){ return mutation.addedNodes.length > 0; })){
+      if(this.replaceAvatars && mutations.some(function(mutation){ return mutation.addedNodes.length > 0; })){
         this.regularAvatars();
       }
     }
   }
 
-  self = new DocumentEnd();
+  that = new DocumentEnd();
 })();
