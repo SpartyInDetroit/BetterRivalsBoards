@@ -5,7 +5,7 @@
   "description": "This extension adds a number of enhancements to the new rivals message board",
   "author": "msudude",
   "license": "MPL 2.0",
-  "version": "0.1",
+  "version": "0.9",
   "preferences": [{
     "name": "hideSidebar",
     "title": "Hide Sidebar",
