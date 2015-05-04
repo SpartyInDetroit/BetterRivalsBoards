@@ -1,13 +1,11 @@
 (function(){
-  var that, DocumentStart = function(){
-    this.loadOptions();
-  }
+  self.port.once("preferenceResponse", function(prefs){
+    var selff, DocumentStart = function(){
+      this.loadOptions();
+    }
 
-
-
-  DocumentStart.prototype = {
-    loadOptions: function(){
-      self.port.on("getPrefs", function(prefs){
+    DocumentStart.prototype = {
+      loadOptions: function(){
         var hideSidebar = prefs[0];
         var hideLastPostAvatar = prefs[1];
         var striped = prefs[2];
@@ -43,9 +41,10 @@
         if(pageButtonsVisible){ root.addClass('enhancement-page-buttons-visible'); }
         if(hideOPAvatar){ root.addClass('enhancement-hide-op-avatar'); }
         if(replaceAvatars){ root.addClass('enhancement-replace-avatars'); }
-      })
+      }
     }
-  }
-
-  that = new DocumentStart();
+    selff = new DocumentStart();
+    self.port.emit("setPreference", prefs);
+  });
+  self.port.emit("preferenceRequest");
 })();
